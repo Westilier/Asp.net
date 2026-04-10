@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Список товаров";
+}
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Категория</th>
+            <th>Наличие на складе</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Category</td>
+                <td>@(product.IsOnStorage ? "Да" : "Нет")</td>
+            </tr>
+        }
+    </tbody>
+    </table>
+</div>
