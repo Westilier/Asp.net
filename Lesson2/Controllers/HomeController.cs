@@ -1,6 +1,4 @@
-using Lesson2.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace Lesson2.Controllers
 {
