@@ -3,11 +3,11 @@
 public class Character
 {
     public int Id { get; set; }
-    public required string Name { get; set; }
-    public required string Book { get; set; }
-    public required string Author { get; set; }
-    public required RoleType Role { get; set; }
-    public required string Description { get; set; }
+    public string Name { get; set; }
+    public string Book { get; set; }
+    public string Author { get; set; }
+    public RoleType Role { get; set; }
+    public string Description { get; set; }
     public enum RoleType
     {
         Main,

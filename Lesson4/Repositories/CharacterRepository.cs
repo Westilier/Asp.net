@@ -64,10 +64,28 @@ public class CharacterRepository
         return _characters;
     }
 
-    public Character GetById(int id)
+    public Character? GetById(int id)
     {
         var product = _characters.First(x => x.Id == id);
 
         return product;
+    }
+    public void Update(Character newCharacter)
+    {
+        var oldCharacter = _characters.FirstOrDefault(x => x.Id == newCharacter.Id);
+        if (oldCharacter != null)
+        {
+            oldCharacter.Name = newCharacter.Name;
+            oldCharacter.Book = newCharacter.Book;
+            oldCharacter.Author = newCharacter.Author;
+            oldCharacter.Role = newCharacter.Role;
+            oldCharacter.Description = newCharacter.Description;
+        }
+    }
+
+    public void Add(Character character)
+    {
+        character.Id = _nextId++;
+        _characters.Add(character);
     }
 }
