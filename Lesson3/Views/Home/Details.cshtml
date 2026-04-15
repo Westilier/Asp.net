@@ -1,0 +1,50 @@
+﻿@model Character
+
+@{
+    ViewData["Title"] = $"Подробнее о персонаже - {Model.Name}";
+}
+
+<h1>Подробная информация о персонаже</h1>
+
+<div class="card mt-4">
+    <div class="card-header bg-primary text-white">
+        <h3>@Model.Name</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Имя</th>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <th>Название книги</th>
+                <td>@Model.Book</td>
+            </tr>
+            <tr>
+                <th>Автор</th>
+                <td>@Model.Author</td>
+            </tr>
+            <tr>
+                <th>Роль</th>
+                <td>
+                    @if (Model.Role == Character.RoleType.Main)
+                    {
+                        <span class="badge bg-success">Главный герой</span>
+                    }
+                    else if (Model.Role == Character.RoleType.Secondary)
+                    {
+                        <span class="badge bg-info">Второстепенный</span>
+                    }
+                    else
+                    {
+                        <span>@Model.Role</span>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <th>Краткое описание</th>
+                <td>@Model.Description</td>
+            </tr>
+        </table>
+    </div>
+</div>
