@@ -18,6 +18,18 @@ namespace Lesson3.Controllers
             var product = characterRepository.GetById(id);
             return View(product);
         }
+        public IActionResult Update()
+        {
+            var product = characterRepository.GetById(id);
+            return View(product);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Character character)
+        {
+            var product = characterRepository.GetById(id);
+            return View(product);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
